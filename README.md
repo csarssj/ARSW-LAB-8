@@ -131,14 +131,49 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 	
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
+	*B1ls
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/CPU1.png)
+		
+	*B2ms
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/CPU2.png)
+		
+	Consume una gran cantidad de la CPU con diferentes picos. Ya  que se ejecutan muchas operaciones en un tiempo corto y al existir poca capacidad produce un consumo alto de la CPU con una mala practica se recurre a repetir iteraciones por lo que conlleva el mismo procedimiento varias veces.
+	Y al agregarse más capacidad a la máquina, los tiempos y el consumo se ve disminuido. Sin embargo al aumentar se evidencia la misma problematica de repetición de operacions e/o iteraciones.
 
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
+		*B1ls
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/postman1.png)
+		
+		*B2ms
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/postman2.png)
+		
     * Si hubo fallos documentelos y explique.
+	
+		Si existieron errores debido a las grandes cantidades de iteraciones al intentar acceder al recurso en un mismo instante. Lo que demuestra la poca eficiencia del programa y produce fallas.
+		Se ve una leve mejoria en los tiempos con la mayor capacidad, pero los fallos persisten ya que se debe a un problema más de concurrencia.
+		
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+	
+	* Mayor RAM
+	* Mayor Almacenamiento
+	* Mayor cantidad de discos de datos
+	* Mayor cantidad de procesadores virtuales implica mayor potencia.
+	
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+	
+	No considero que sea una buena solución debido a que solo se observa una leve mejora en los tiempos, pero en cuestion de consumo y fallos siguen ocurriendo casi con la misma frecuencia.
+	FibinacciApp sigue comportandose de manera similar debido a sus errores de concurrencia, solo es mas rapido porque consume los mismos recursos con un tamaño mayor o menor dependiendo la máquina.
+	
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+	Aumenta la capacidad y el procesamiento de la máquina pero para ello se tiene que reiniciar, lo cual interrumpe el servicio que se ejecuta y no es conveniente en terminos de 
+	disponibilidad.
+	
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+	Si hubo mejoria pero muy leve, ya que el cambio ofrece un mayor tamaño, almacenamiento y RAM. Lo que implica que se puede ofrecer mayor potencia y mejoria en el procesamiento ante las cantidades de iteraciones que se realizan en el mismo tiempo.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
 ### Parte 2 - Escalabilidad horizontal
