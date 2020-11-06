@@ -113,7 +113,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 	
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
-## A0
+## Tabla
 | N | B1ls(seg)| B2ms(seg)|
 |---------|--------|--------|
 | 1000000 | 29.61 | 19.19 |
@@ -178,8 +178,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 	Si hubo mejoria pero muy leve, ya que el cambio ofrece un mayor tamaño, almacenamiento y RAM. Lo que implica que se puede ofrecer mayor potencia y mejoria en el procesamiento ante las cantidades de iteraciones que se realizan en el mismo tiempo.
 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
-
 	
+	* ![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/15.png)
+	
+	El comportamiento porcentualmente es casi igual, no se ven muchas diferencias.
 
 ### Parte 2 - Escalabilidad horizontal
 
