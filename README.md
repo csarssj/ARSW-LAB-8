@@ -106,8 +106,32 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 		- *Cuenta de almacenamiento:* una cuenta de Azure Storage contiene todos los objetos de datos de Azure Storage: blobs, archivos, colas, tablas y discos. La cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage que es accesible desde cualquier lugar del mundo a través de HTTP o HTTPS.
 		
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+	
+	* Porque cuando se cierra la conexión de SSH, todos los servicios que esten corriendo en ese momento de manera remota se terminarán en ese momento exacto.
+	
+	* Se crea porque al abrirse un nuevo puerto (3000) permitimos que asi se cierre o se caiga la conexión SSH. De igual manera se siga ejecutando el servicio y pase el trafico por ese puerto.
+	
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+## A0
+| N | B1ls(seg)| B2ms(seg)|
+|---------|--------|--------|
+| 1000000 | 29.61 | 19.19 |
+| 1010000 | 28.00 | 19.62 |
+| 1020000 | 25.13 | 20.41 |
+| 1030000 | 34.33 | 20.96 |
+| 1040000 | 23.82 | 20.80 |
+| 1050000 | 24.51 | 21.19 |
+| 1060000 | 25.91 | 21.43 |
+| 1070000 | 25.88 | 21.60 |
+| 1080000 | 26.21 | 22.65 |
+| 1090000 | 27.04 | 23.25 |
+
+
+	
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
