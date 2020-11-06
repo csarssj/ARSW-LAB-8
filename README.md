@@ -86,7 +86,25 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+	
+	Azure crea 6 recursos junto con la VM los cuales son:
+		- Red Virtual.
+		- Disco.
+		- Dirección IP Pública.
+		- Interfaz de Red.
+		- Grupo de Seguridad de Red.
+		- Cuenta de almacenamiento.
+	
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+		- *Red Virtual:*  es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales.
+		- *Disco:* los discos administrados de Azure son volúmenes de almacenamiento de nivel de bloque que administra Azure y que se usan con Azure Virtual Machines.
+		- *Dirección IP Pública:* se usan para la comunicación entrante y saliente [sin traducción de direcciones de red (NAT)] con Internet y otros recursos de Azure no conectados a una red virtual. La asignación de una dirección IP pública a una NIC es opcional.
+		- *Interfaz de Red:* es la interconexión entre una máquina virtual y una red virtual (VNet). Una máquina virtual debe tener al menos una NIC, pero puede tener varias,
+		   en función del tamaño de la máquina virtual que se cree. Obtenga información sobre cuántas NIC admite cada tamaño de máquina virtual, consulte Tamaño de máquina virtual.
+		- *Grupo de Seguridad de Red:* contiene una lista de reglas de la lista de control de acceso (ACL) que permiten o deniegan el tráfico de red a subredes, NIC, o ambas.
+		- *Cuenta de almacenamiento:* una cuenta de Azure Storage contiene todos los objetos de datos de Azure Storage: blobs, archivos, colas, tablas y discos. La cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage que es accesible desde cualquier lugar del mundo a través de HTTP o HTTPS.
+		
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
