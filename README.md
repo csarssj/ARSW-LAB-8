@@ -132,10 +132,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
 	*B1ls
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/CPU1.png)
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/CPU1.png)
 		
 	*B2ms
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/CPU2.png)
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/CPU2.png)
 		
 	Consume una gran cantidad de la CPU con diferentes picos. Ya  que se ejecutan muchas operaciones en un tiempo corto y al existir poca capacidad produce un consumo alto de la CPU con una mala practica se recurre a repetir iteraciones por lo que conlleva el mismo procedimiento varias veces.
 	Y al agregarse más capacidad a la máquina, los tiempos y el consumo se ve disminuido. Sin embargo al aumentar se evidencia la misma problematica de repetición de operacions e/o iteraciones.
@@ -143,10 +143,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
 		*B1ls
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/postman1.png)
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/postman1.png)
 		
 		*B2ms
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/postman2.png)
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/postman2.png)
 		
     * Si hubo fallos documentelos y explique.
 	
