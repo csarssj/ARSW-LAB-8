@@ -176,6 +176,8 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
+	
+
 ### Parte 2 - Escalabilidad horizontal
 
 #### Crear el Balanceador de Carga
