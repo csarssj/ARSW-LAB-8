@@ -96,14 +96,19 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 		- Cuenta de almacenamiento.
 	
 2. ¿Brevemente describa para qué sirve cada recurso?
+	
+	- *Red Virtual:*  es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales.
+	
+	- *Disco:* los discos administrados de Azure son volúmenes de almacenamiento de nivel de bloque que administra Azure y que se usan con Azure Virtual Machines.
 
-		- *Red Virtual:*  es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales.
-		- *Disco:* los discos administrados de Azure son volúmenes de almacenamiento de nivel de bloque que administra Azure y que se usan con Azure Virtual Machines.
-		- *Dirección IP Pública:* se usan para la comunicación entrante y saliente [sin traducción de direcciones de red (NAT)] con Internet y otros recursos de Azure no conectados a una red virtual. La asignación de una dirección IP pública a una NIC es opcional.
-		- *Interfaz de Red:* es la interconexión entre una máquina virtual y una red virtual (VNet). Una máquina virtual debe tener al menos una NIC, pero puede tener varias,
+	- *Dirección IP Pública:* se usan para la comunicación entrante y saliente [sin traducción de direcciones de red (NAT)] con Internet y otros recursos de Azure no conectados a una red virtual. La asignación de una dirección IP pública a una NIC es opcional.
+	
+	- *Interfaz de Red:* es la interconexión entre una máquina virtual y una red virtual (VNet). Una máquina virtual debe tener al menos una NIC, pero puede tener varias,
 		   en función del tamaño de la máquina virtual que se cree. Obtenga información sobre cuántas NIC admite cada tamaño de máquina virtual, consulte Tamaño de máquina virtual.
-		- *Grupo de Seguridad de Red:* contiene una lista de reglas de la lista de control de acceso (ACL) que permiten o deniegan el tráfico de red a subredes, NIC, o ambas.
-		- *Cuenta de almacenamiento:* una cuenta de Azure Storage contiene todos los objetos de datos de Azure Storage: blobs, archivos, colas, tablas y discos. La cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage que es accesible desde cualquier lugar del mundo a través de HTTP o HTTPS.
+	
+	- *Grupo de Seguridad de Red:* contiene una lista de reglas de la lista de control de acceso (ACL) que permiten o deniegan el tráfico de red a subredes, NIC, o ambas.
+	
+	- *Cuenta de almacenamiento:* una cuenta de Azure Storage contiene todos los objetos de datos de Azure Storage: blobs, archivos, colas, tablas y discos. La cuenta de almacenamiento proporciona un espacio de nombres único para los datos de Azure Storage que es accesible desde cualquier lugar del mundo a través de HTTP o HTTPS.
 		
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
 	
@@ -285,12 +290,47 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+	
+	- **
+	- **
+	- *IP pública:* Para obtener acceso a la aplicación en Internet, necesita una dirección IP pública para el equilibrador de carga.
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+	- *Backend Pool:* El grupo de máquinas virtuales o instancias de un conjunto de escalado de máquinas virtuales que van a atender la solicitud entrante.
+	
 * ¿Cuál es el propósito del *Health Probe*?
+
+	- *Health Probe:* se usan para determinar el estado de mantenimiento de las instancias del grupo de back-end. Durante la creación del equilibrador de carga, configure un sondeo de estado para que lo use el equilibrador de carga. Este sondeo de estado determinará si una instancia está en buen estado y puede recibir tráfico.
+	
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+	
+	- *Load Balancing Rule:*  se usan para definir cómo se distribuye el tráfico entrante a todas las instancias del grupo de back-end. Las reglas de equilibrio de carga asignan una configuración de dirección IP de front-end y un puerto dados a varios puertos y direcciones IP de back-end.
+	
+	- 
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+	
+	- *Virtual Network:* es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales.
+	
+	- *Subnet:* Las subredes le permiten segmentar la red virtual en una o varias subredes y asignar una parte del espacio de direcciones de la red virtual para cada subred.
+	
+	- *address space:* tiene que especificar un espacio de direcciones IP privado personalizado mediante direcciones públicas y privadas, Azure asigna a los recursos de una red virtual una dirección IP privada desde el espacio de direcciones que asigne.
+	
+	- *address range:* El rango de direcciones que defina puede ser público o privado (RFC 1918). Ya sea que defina el rango de direcciones como público o privado, solo se puede acceder al rango de direcciones desde la red virtual, desde redes virtuales interconectadas y desde cualquier red local que haya conectado a la red virtual.
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+
+	- *Availability Zone*. Una zona de disponibilidad es una zona separada físicamente dentro de una región de Azure. Hay tres zonas de disponibilidad por cada región de Azure admitida.
+	
+	- *Zonas*. Cada zona de disponibilidad tiene una fuente de alimentación, una red y un sistema de refrigeración distintos. Si diseña las soluciones para que utilicen máquinas virtuales replicadas en zonas, podrá proteger sus datos y aplicaciones frente a la pérdida de un centro de datos.
+	
+	- *zone-redundant* Es una dirección IP-Pública que si se produce un error en una región, el tráfico se enruta al siguiente equilibrador de carga regional correcto más cercano.
+
 * ¿Cuál es el propósito del *Network Security Group*?
+
+	- *Network Security Group:* para filtrar el tráfico de red hacia y desde los recursos de Azure de una red virtual de Azure. Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante o el tráfico de red saliente de varios tipos de recursos de Azure. Para cada regla, puede especificar un origen y destino, un puerto y un protocolo.
+	
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
 
