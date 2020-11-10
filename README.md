@@ -137,9 +137,11 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
 	* B1ls
+	
 		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/CPU1.png)
 		
 	* B2ms
+	
 		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part1/CPU2.png)
 		
 	Consume una gran cantidad de la CPU con diferentes picos. Ya  que se ejecutan muchas operaciones en un tiempo corto y al existir poca capacidad produce un consumo alto de la CPU con una mala practica se recurre a repetir iteraciones por lo que conlleva el mismo procedimiento varias veces.
@@ -285,7 +287,21 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
-
+	* VM1:
+	
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm1.png)
+		
+	* VM2:
+	
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm2.png)
+		
+	* VM3:
+	
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm3.png)
+		
+	* VM4:
+	
+		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm4.png)
 
 **Preguntas**
 
@@ -293,9 +309,9 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 	
 	- *Tipos balanceadores:* 
 	
-			* Un equilibrador de carga público puede proporcionar conexiones de salida para máquinas virtuales dentro de la red virtual. Estas conexiones se realizan mediante la traducción de sus direcciones IP privadas a direcciones IP públicas. Las instancias públicas de Load Balancer se usan para equilibrar la carga del tráfico de Internet en las máquinas virtuales.
+		- Un equilibrador de carga público puede proporcionar conexiones de salida para máquinas virtuales dentro de la red virtual. Estas conexiones se realizan mediante la traducción de sus direcciones IP privadas a direcciones IP públicas. Las instancias públicas de Load Balancer se usan para equilibrar la carga del tráfico de Internet en las máquinas virtuales.
 					
-			* Un equilibrador de carga interno (o privado) se usa cuando se necesitan direcciones IP privadas solo en el front-end. Los equilibradores de carga internos se usan para equilibrar la carga del tráfico dentro de una red virtual. También se puede acceder a un servidor front-end del equilibrador de carga desde una red local en un escenario híbrido.
+		- Un equilibrador de carga interno (o privado) se usa cuando se necesitan direcciones IP privadas solo en el front-end. Los equilibradores de carga internos se usan para equilibrar la carga del tráfico dentro de una red virtual. También se puede acceder a un servidor front-end del equilibrador de carga desde una red local en un escenario híbrido.
 	
 	- *SKU:* Load balancer admite SKU estándar y básicas. Estas SKU difieren en la escala, las características y los precios del escenario. Cualquier escenario que sea posible con Basic Load Balancer se puede crear con Standard Load Balancer.
 	
@@ -313,7 +329,11 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 	
 	- *Load Balancing Rule:*  se usan para definir cómo se distribuye el tráfico entrante a todas las instancias del grupo de back-end. Las reglas de equilibrio de carga asignan una configuración de dirección IP de front-end y un puerto dados a varios puertos y direcciones IP de back-end.
 	
-	- 
+	- *None (hash-based):* Especifica que las solicitudes sucesivas del mismo cliente pueden ser manejadas por cualquier máquina virtual.
+	
+    - *Client IP (source IP affinity 2-tuple):* Especifica que las peticiones sucesivas de la misma dirección IP del cliente serán gestionadas 	por la misma máquina virtual.
+	
+    - *Client IP and Protocol (Source IP affinity 3-tuple):* Especifica que las solicitudes sucesivas de la misma combinación de dirección IP de cliente y protocolo serán tratadas por la misma máquina virtual.
 
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
 	
@@ -338,7 +358,10 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 	- *Network Security Group:* para filtrar el tráfico de red hacia y desde los recursos de Azure de una red virtual de Azure. Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante o el tráfico de red saliente de varios tipos de recursos de Azure. Para cada regla, puede especificar un origen y destino, un puerto y un protocolo.
 	
 * Informe de newman 1 (Punto 2)
+	*SOLUCIONADO ARRIBA*
 * Presente el Diagrama de Despliegue de la solución.
+
+	![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/despliegue.png)
 
 
 
