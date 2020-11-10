@@ -287,21 +287,21 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
-	* VM1:
+* VM1:
 	
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm1.png)
+	![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm1.png)
 		
-	* VM2:
+* VM2:
 	
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm2.png)
+	![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm2.png)
 		
-	* VM3:
+* VM3:
 	
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm3.png)
+	![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm3.png)
 		
-	* VM4:
+* VM4:
 	
-		![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm4.png)
+	![image](https://github.com/csarssj/ARSW-LAB-8/blob/main/images/part2/vm4.png)
 
 **Preguntas**
 
